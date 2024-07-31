@@ -6,6 +6,15 @@
       @reset="onReset"
       class="q-gutter-md"
     >
+    <!-- id -->
+    <q-input
+        filled
+        v-model="id"
+        label="Your id *"
+        hint="id-code"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Please type your id-code']"
+      />
     <!-- name -->
       <q-input
         filled
@@ -58,12 +67,14 @@ export default {
 
     const name = ref("ปารเมศ")
     const surname = ref("สิทธิมูล")
+    const id = ref("6604101351")
     const age = ref(null)
     const accept = ref(false)
 
     return {
       name,
       surname,
+      id,
       age,
       accept,
 
